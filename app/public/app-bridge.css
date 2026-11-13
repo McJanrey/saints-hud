@@ -16,6 +16,7 @@ html,body{height:100%;margin:0;background:var(--bg);overflow:hidden}
 .nav .t{white-space:nowrap}
 .nav.collapsed .brand>div:last-child,.nav.collapsed .evsw>span,.nav.collapsed .evsw>svg,.nav.collapsed .navgroup,.nav.collapsed a.nl .t,.nav.collapsed .navfoot .faint,.nav.collapsed .navfoot .pill .lbl{display:none}
 .nav.collapsed a.nl{justify-content:center;padding:0}.nav.collapsed .evsw{justify-content:center;padding:6px}.nav.collapsed .brand{justify-content:center;padding:0}
+.navfoot .pill{height:auto;min-height:24px;padding:4px 10px;white-space:normal;line-height:1.35;max-width:100%}
 .nav.collapsed .navfoot .pill{justify-content:center;padding:0;width:24px;margin:0 auto}.nav.collapsed .navfoot .row{flex-direction:column;align-items:center}
 .evsw .cover{background-size:cover;background-position:center}
 .nav a.nl{cursor:pointer}
@@ -83,7 +84,7 @@ button.item{border:0;background:none;width:100%;text-align:left;font:inherit}
 .ml{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:750;color:#fff;flex:none;overflow:hidden;border:1px solid var(--line-strong);object-fit:contain;background:var(--surface-2)}
 .ml.big{width:64px;height:64px;font-size:18px}
 table.grid{border-collapse:collapse;width:100%;min-width:720px;font-size:var(--fs-sm)}
-table.grid th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);padding:0 6px var(--s-2)}
+table.grid th{text-align:left;font-size:12px;font-weight:500;color:var(--text-3);padding:0 6px var(--s-2)}
 table.grid td{padding:6px;border-top:1px solid var(--line);vertical-align:middle}
 table.grid td input,table.grid td select{height:36px}
 table.grid td input:not(:hover):not(:focus),table.grid td select:not(:hover):not(:focus){border-color:transparent;background:transparent}
@@ -114,12 +115,13 @@ table.grid td input:not(:hover):not(:focus),table.grid td select:not(:hover):not
 /* my events */
 .evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .evcard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface-1);overflow:hidden;cursor:pointer;color:inherit;text-align:left;padding:0;transition:transform 180ms var(--ease),border-color 180ms,box-shadow 180ms}
-.evcard:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:var(--shadow-2)}
+.evcard:hover{border-color:var(--line-strong)}
 .art{position:relative;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:10px;color:rgba(255,255,255,.7)}
 .evbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .evbody b{font-size:15px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .evmeta{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--text-2);font-size:13px}
-.evmeta .open{color:var(--accent-ink);font-weight:600}
+.evmeta .open{color:var(--text-2);font-weight:500;transition:color 180ms var(--ease)}
+.evcard:hover .evmeta .open{color:var(--accent-ink)}
 .newcard{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:250px;border:1.5px dashed var(--line-strong);border-radius:var(--r-lg);color:var(--text-2);cursor:pointer;background:transparent;transition:border-color 180ms,background 180ms,color 180ms;font:inherit}
 .newcard:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--text)}
 .newcard i{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center}
@@ -146,7 +148,7 @@ table.grid td input:not(:hover):not(:focus),table.grid td select:not(:hover):not
 .pal .it{display:flex;align-items:center;gap:12px;height:44px;padding:0 16px;color:var(--text-2);cursor:pointer}
 .pal .it.on{background:var(--accent-soft);color:var(--text)}
 .pal .it small{margin-left:auto;color:var(--text-3);font-size:12px;white-space:nowrap}
-.pal .grp{padding:12px 16px 4px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.pal .grp{padding:12px 16px 4px;font-size:12px;font-weight:500;color:var(--text-3)}
 .pal .ft{display:flex;gap:16px;align-items:center;height:40px;padding:0 16px;border-top:1px solid var(--line);background:var(--surface-2);color:var(--text-3);font-size:12px}
 #toasts{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px;pointer-events:none}
 #toasts .toast{position:static;box-shadow:var(--shadow-2)}
@@ -225,7 +227,7 @@ table.grid td input:not(:hover):not(:focus),table.grid td select:not(:hover):not
 .vmap.on{border-color:#e9ecea}.vmap.off img{filter:brightness(.45) saturate(.6)}
 .vmap .ck{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--on-accent,#111);font-style:normal;font-weight:800;display:grid;place-items:center;font-size:13px}
 .vmap.ban:hover{border-color:#e5484d}.vmap.pick:hover,.vmap.decider:hover{border-color:#3ddc84}
-.vgrp{padding:8px 10px;border-radius:6px;background:var(--surface-2);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);cursor:pointer}
+.vgrp{padding:8px 10px;border-radius:6px;background:var(--surface-2);font-size:12px;font-weight:600;color:var(--text-2);cursor:pointer}
 .vother summary{list-style:none}.vother[open] summary{margin-bottom:12px}
 .vteam{min-width:160px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2)}.vteam small{display:block;font-size:9px;color:var(--text-3);letter-spacing:.05em}.vteam b{font-size:14px}
 .vrun{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
@@ -274,6 +276,8 @@ table.grid td input:not(:hover):not(:focus),table.grid td select:not(:hover):not
 /* My Events: delete straight from the card (two clicks) */
 .evtop{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0}.evtop b{min-width:0}
 .evdel{width:30px;height:30px;min-height:0;padding:0;flex:none;border-radius:8px}.evdel svg{width:15px;height:15px}
+.btn.icon.evdel:not(.armed){background:transparent;border-color:transparent;color:var(--text-3)}
+.btn.icon.evdel:not(.armed):hover,.btn.icon.evdel:not(.armed):focus-visible{background:var(--err-bg);color:var(--err)}
 .evdel.armed{width:auto;padding:0 10px;font-size:12px;font-weight:700;background:var(--err);color:#fff}
 /* team members: fixed column widths, so the header lines up the same with or without players */
 table.grid.members{table-layout:fixed}
@@ -282,11 +286,12 @@ table.grid.members td{overflow:hidden}table.grid.members th{white-space:nowrap;o
 table.grid.members .camsrc{max-width:100%;overflow:hidden;white-space:nowrap}table.grid.members .camsrc span,table.grid.members td select{min-width:0;max-width:100%;text-overflow:ellipsis}
 .ctry select{min-width:0;width:100%}
 /* Anton for headings only (page titles, section titles, event names, the app name, dialog titles); everything else stays Inter */
-.app .pagehead h1,.app .brand b,.app .sec h2,.app .sechead h2,.app .evbody b,.app .detail h2,.dialog header h2,.upd-hd h2,.crop-dlg header h2{font-family:"Anton","Inter",sans-serif;font-weight:400;letter-spacing:.01em}
+.app .pagehead h1,.app .brand b{font-family:"Anton","Inter",sans-serif;font-weight:400;letter-spacing:.01em}
+.app .sec h2,.app .sechead h2,.app .detail h2,.dialog header h2,.upd-hd h2,.crop-dlg header h2{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:0}
 .app .pagehead h1{font-size:34px;line-height:1.1}
 .app .brand b{font-size:19px}
 .app .sec h2,.app .sechead h2{font-size:21px}
-.app .evbody b{font-size:17px}
+.app .evbody b{font-size:15px;font-weight:600}
 /* use the width: pages fill the window (no centred 1320 px column) */
 .pagebox{max-width:none}
 .page{padding:24px 28px 40px}
@@ -304,7 +309,7 @@ table.grid.members .camsrc{max-width:100%;overflow:hidden;white-space:nowrap}tab
 /* delete confirmation pop-up */
 .cfm-scrim{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:16px;color:var(--text);font:var(--fs-base)/1.45 var(--font-sans);animation:fade .15s ease}
 .cfm{width:510px;max-width:100%;background:var(--surface-1);border:1px solid var(--line-strong);border-radius:6px;padding:24px 24px 22px;box-shadow:var(--shadow-3)}
-.cfm h2{margin:0;font-family:"Anton","Inter",sans-serif;font-weight:400;font-size:24px;letter-spacing:.01em}
+.cfm h2{margin:0;font-family:"Inter",sans-serif;font-weight:600;font-size:20px;letter-spacing:0}
 .cfm p{margin:10px 0 0;color:var(--text-2);font-weight:500}
 .cfm-b{display:flex;justify-content:flex-end;gap:12px;margin-top:22px}
 .cfm-b .btn{height:40px;padding:0 14px;font-weight:600;background:var(--surface-2);border:1px solid var(--line-strong)}
@@ -339,7 +344,7 @@ table.grid.members .camsrc{max-width:100%;overflow:hidden;white-space:nowrap}tab
 .navtog .car.up{transform:rotate(-135deg);margin-top:3px}
 .nav.collapsed .navtog{display:none}
 .nav:not(.collapsed) .brand{height:60px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2,rgba(255,255,255,.03));margin-bottom:var(--s-3,12px)}
-.navtog{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.navtog{font-size:12px;font-weight:500;color:var(--text-3)}
 
 /* the sidebar, laid out like BLOB's: a card on top that names the page, small section labels with a rule, a neutral selected row, a folded footer */
 :root{--rail-w:200px}
