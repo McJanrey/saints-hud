@@ -11,7 +11,6 @@
 </head>
 <body>
 <div class="app" id="app"></div>
-<div class="bgloop" aria-hidden="true"><video autoplay muted loop playsinline disablepictureinpicture><source src="/brand/bg-loop.webm" type="video/webm"><source src="/brand/bg-loop.mp4" type="video/mp4"></video></div>
 <div id="ovl"></div>
 <div id="toasts" aria-live="polite"></div>
 <div id="updlg"></div>
@@ -360,7 +359,7 @@ overview(e){
     <div class="sec"><div><h2>Start streaming</h2><p class="sub">Copy the overlay URL into an OBS or vMix browser source set to 1920 × 1080.</p></div>
       <div class="fld"><span>Overlay URL</span><div class="row c nowrap"><select id="ovScene" style="max-width:300px"><option value="auto"${sc==="auto"?" selected":""}>Follow HUD Editor (switch live)</option>${Object.entries(SCENES).map(([k,v])=>`<option value="${k}"${sc===k?" selected":""}>${v}</option>`).join("")}</select>
       <input class="mono" id="ovUrl" readonly value="${esc(overlayUrl(sc))}"><button class="btn icon" type="button" data-act="copy" aria-label="Copy overlay URL">${ico("copy")}</button></div>
-      <span class="note red">*This link belongs to this event. Every event has its own and they are all live at once, so there is nothing to set on air. Tick "Shutdown source when not visible" off so it stays live. Links for each scene are on Outputs.</span></div>
+      <span class="note">This link belongs to this event. Every event has its own and they are all live at once, so there is nothing to set on air. Tick "Shutdown source when not visible" off so it stays live. Links for each scene are on Outputs.</span></div>
       <p class="note" id="screens">${screensText()}</p>
     </div>
     <div class="sec"><h2>Workspace</h2><div class="cols">${F.text("name","Workspace name")}${F.text("organiser","Event organiser")}${F.sel("game","Select game",GAMES,"data-rerender")}${F.sel("kit","Broadcast kit",["Saints Default","Saints Varsity","Saints Gaming"])}</div><div class="row c nowrap" style="margin-top:4px"><div class="dz mini" style="width:auto;min-width:0;border:0;padding:0">${F.dz("cover","Cover image","mini")}</div><p class="note">Cover image for this event's card. Leave it empty to use the game's official art.</p></div></div>
